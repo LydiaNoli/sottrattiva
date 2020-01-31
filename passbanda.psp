@@ -1,0 +1,7 @@
+import("stdfaust.lib");
+ordine = 64;
+cutoff1 = 6000;
+cutoff2 = 3000;
+banda1= no.noise : fi.lowpass(ordine,cutoff1) : fi.highpass(ordine,cutoff1);
+banda2= no.noise : fi.lowpass(ordine,cutoff2) : fi.highpass(ordine,cutoff2);
+process = banda1, banda2; 
